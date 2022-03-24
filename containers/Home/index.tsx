@@ -1,8 +1,8 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
-import { Dispatch } from '~/utils/redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'next/router';
+import type { Dispatch } from '~/utils/redux';
 import type { NextRouter } from 'next/router';
 import type { State } from '~/redux/reducers';
 
