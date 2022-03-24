@@ -6,6 +6,11 @@ import {ThunkAction} from "redux-thunk";
 type Awaited<T> = T extends PromiseLike<infer U> ? U : T
 
 declare module "redux" {
+  export interface Dispatch {
+    <T extends (...args: any[]) => any>(action: T):
+      Promise<DispatchReturn<Awaited<Awaited<ReturnType<T>>['payload']>>>
+  }
+
   function bindActionCreators<M extends ActionCreatorsMapObject<any>>(
     actionCreators: M,
     dispatch: ReduxDispatch
@@ -54,7 +59,7 @@ export const createAction = <Args extends any[], S, R>(define: DefineAction, fn:
   }> => {
     const ret = fn(...args);
     if (ret instanceof Function) {
-      return await dispatch({
+      return dispatch({
         type: define.DEFAULT,
         payload: ret(dispatch, getState, api),
       });
@@ -69,6 +74,6 @@ export const createAction = <Args extends any[], S, R>(define: DefineAction, fn:
 type ValueOf<T> = T[keyof T];
 
 export type ReducerAction<T extends (...args: any) => any> = AnyAction & {
-  type:  ValueOf<Awaited<ReturnType<ReturnType<T>>>['type']>;
+  type: ValueOf<Awaited<ReturnType<ReturnType<T>>>['type']>;
   payload: Awaited<Awaited<ReturnType<ReturnType<T>>>['payload']>;
 };
