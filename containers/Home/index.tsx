@@ -10,11 +10,11 @@ import * as Style from './style';
 import Title from '~/components/Title';
 import P from '~/components/P';
 
-import {setCounter} from '~/redux/actions/home';
+import {counterSet} from '~/redux/actions/home';
 import Button from '~/components/Button';
 
 const actions = {
-  setCounter,
+  counterSet,
 };
 
 const mapStateToProps = (state: State) => ({
@@ -34,7 +34,7 @@ class HomeContainer extends
   React.PureComponent<HomeContainerProps> {
 
   onClick = () => {
-    this.props.setCounter(this.props.counter + 1);
+    this.props.counterSet(this.props.counter + 1);
   };
 
   render() {

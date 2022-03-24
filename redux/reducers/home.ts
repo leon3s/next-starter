@@ -3,8 +3,8 @@ import type {ReducerHooks} from '~/utils/reducer';
 import { createReducer } from '~/utils/reducer';
 
 import {
-  DEFINES,
-  setCounter,
+  COUNTER_SET,
+  counterSet,
 } from '../actions/home';
 
 export type HomeState = {
@@ -16,8 +16,8 @@ const initialState: HomeState = {
 };
 
 const reducerHooks: ReducerHooks<HomeState> = {
-  [DEFINES.COUNTER_INC.DEFAULT]:
-    (state, action: ReducerAction<typeof setCounter>) => ({
+  [COUNTER_SET.DEFAULT]:
+    (state, action: ReducerAction<typeof counterSet>) => ({
       ...state,
       counter: action.payload,
     }),

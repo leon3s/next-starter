@@ -1,12 +1,10 @@
-import {createAction} from '~/utils/redux';
-import * as HOME_DEFINES from '../defines/home';
+import {genAction} from '~/utils/redux';
 import type {State} from '../reducers';
 
-export const DEFINES = HOME_DEFINES;
-
-export const setCounter = createAction<[
+export const [COUNTER_SET, counterSet] = genAction<[
   number
 ], State, number>(
-  HOME_DEFINES.COUNTER_INC,
-  (counter) => counter,
-)
+  'COUNTER_SET',
+  (value) => value
+);
+
