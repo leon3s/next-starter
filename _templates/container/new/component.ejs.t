@@ -21,13 +21,13 @@ const mapStateToProps = ({}: State) => ({
 const mapDispatchToProps = (dispatch: Dispatch<State>) =>
   bindActionCreators(actions, dispatch);
 
-export type Props<%= name %> = {
+export type PropsContainer<%= name %> = {
   router: NextRouter;
 }
   & ReturnType<typeof mapStateToProps>
   & ReturnType<typeof mapDispatchToProps>;
 
-class Container<%= name %> extends PureComponent<Props<%= name %>> {
+class Container<%= name %> extends PureComponent<PropsContainer<%= name %>> {
   render = () => {
     return (
       <Style.Container<%= name %>>

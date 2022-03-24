@@ -1,6 +1,6 @@
 ---
 to: containers/<%= name %>/index.tsx
 ---
-import <%= name %> from './<%= name %>';
+import Container<%= name %> from './<%= name %>';
 
-export default <%= name %>;
+export default Container<%= name %>;
