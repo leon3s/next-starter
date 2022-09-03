@@ -1,10 +1,8 @@
-# TypeScript & Redux & Styled Components Next.js starter
+# Next Starter
 
-This is a really simple project that show the usage of Next.js with TypeScript and Styled Components width redux.
+Next Starter is your NextJS + Redux + Styled Components + Hygen starter
 
-## Preview
-
-## How to use it?
+## Installation
 
 ```bash
   npm install && npm run dev

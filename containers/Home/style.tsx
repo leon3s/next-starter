@@ -7,7 +7,7 @@ export const Container = Styled.div`
   width: 100%;
   height: 100%;
   ${props => `
-  background-color: ${props.theme.view.background.primary};
+    background-color: ${props.theme.view.background.primary};
   `}
 `;
 

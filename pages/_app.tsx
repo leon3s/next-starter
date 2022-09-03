@@ -9,6 +9,8 @@ import {themeDefault} from '~/styles/themes';
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 
+import '../styles/style.css';
+
 export type NextPageWithLayout = NextPage & {
   getLayout?: (page: React.ReactElement) => React.ReactNode;
 };
