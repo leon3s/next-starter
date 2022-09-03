@@ -22,4 +22,4 @@ jobs:
           git checkout -b update-dependencies-${{ steps.date.outputs.date }}
           git add -A
           git commit -m "[UPDATE] Npm dependencies"
-          test $(git status --porcelain | wc -l) -gt 0 && git push --set-upstream update-dependencies-${{ steps.date.outputs.date }} || echo "nothing to update"
+          if [[ $(git status --porcelain | wc -l) -gt 0 ]] then git push --set-upstream update-dependencies-${{ steps.date.outputs.date }}; else echo "nothing to update"; fi
