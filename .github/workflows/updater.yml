@@ -1,7 +1,9 @@
 name: Updater
 on:
-  schedule: # 03:00 JST == 18:00 UTC
-    - cron: "5 * * * *"
+  schedule:
+    - cron: "* * * * *"
+  workflow_dispatch:
+
 jobs:
   Updater:
     runs-on: ubuntu-latest
